@@ -85,11 +85,11 @@
                     <tbody>
                         <?php foreach ($transcript as $course): ?>
                         <tr class="hover:bg-gray-700 hover:text-white transition duration-300 ease-in-out">
-                            <td class="border-t border-gray-700 px-6 py-4"><?= $course['course']; ?></td>
-                            <td class="border-t border-gray-700 px-6 py-4"><?= $course['kode']; ?></td>
-                            <td class="border-t border-gray-700 px-6 py-4"><?= $course['credit']; ?></td>
-                            <td class="border-t border-gray-700 px-6 py-4"><?= $course['predicate']; ?></td>
-                            <td class="border-t border-gray-700 px-6 py-4"><?= $course['semester']; ?></td>
+                            <td class="border-t border-gray-700 px-6 py-4 text-center"><?= $course['course']; ?></td>
+                            <td class="border-t border-gray-700 px-6 py-4 text-center"><?= $course['kode']; ?></td>
+                            <td class="border-t border-gray-700 px-6 py-4 text-center"><?= $course['credit']; ?></td>
+                            <td class="border-t border-gray-700 px-6 py-4 text-center"><?= $course['predicate']; ?></td>
+                            <td class="border-t border-gray-700 px-6 py-4 text-center"><?= $course['semester']; ?></td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -159,30 +159,33 @@
         <div class="container mx-auto max-w-screen-lg">
             <h2 class="text-4xl font-bold text-center text-white mb-8">Portfolio</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <?php foreach ($portfolo as $project): ?>
-                    <div class="bg-black-900 rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105">
-                        <img src="<?=$project['image']; ?>" alt="<?= $project['title']; ?>" class="w-full h-48 object-cover">
-                        <div p-6 bg-gray-800 bg-opacity-80>
-                            <h3 class="text-2xl font-semibold text-white mb-2"><?= $project['category']; ?></h3>
-                            <h3 class="text-2xl font-semibold text-white mb-2"><?= $project['title']; ?></h3>
-                            <p class="text-gray-300 mb-4"><?= $project['description']; ?></p>
-                            <p class="text-gray-200 mb-4"><strong>Stack: </strong><?= implode(', ', $project['stack']); ?></p>
-                            <a href="<?= $project['href']; ?>" target="_blank" class="text-primary-color hover:underline">View Project</a>
-                        </div>
+                <?php foreach ($portfolio as $project): ?>
+                <div class="bg-black-900 rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105">
+                    <img src="<?= base_url($project['image']); ?>" alt="<?= $project['title']; ?>" class="w-full h-48 object-cover">
+                    <div class="p-6 bg-gray-800 bg-opacity-80">
+                        <h3 class="text-2xl font-semibold text-white mb-2"><?= $project['title']; ?></h3>
+                        <p class="text-gray-300 mb-4"><?= $project['description']; ?></p>
+                        <p class="text-gray-200 mb-4"><strong>Stack:</strong> <?= implode(', ', $project['stack']); ?></p>
+                        <a href="<?= $project['href']; ?>" target="_blank" class="text-primary-color hover:underline">View Project</a>
                     </div>
+                </div>
                 <?php endforeach; ?>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-gradient-to-r from-teal-500 to-pink-500 fade-in-up">
+    <section id="contact" class="py-16 bg-gradient-to-r from-teal-500 to-pink-500 text-center fade-in-up">
         <div class="container mx-auto max-w-screen-lg">
-            <h2 class="text-4xl font-bold text-white mb-6">Contact Me!</h2>
-            <p class="text-xl text-gray-200 mb-2">Email: <?= $contact['email']; ?></p>
-            <p class="text-xl text-gray-200 mb-2">Phone: <?= $contact['phone']; ?></p>
-            <p class="text-xl text-gray-200">Location: <?= $contact['location']; ?></p>
+            <h2 class="text-4xl font-bold text-white mb-6">Contact Me</h2>
+            <p class="text-xl text-gray-200 mb-2">Email: sandynicholas1201@gmail.com</p>
+            <p class="text-xl text-gray-200 mb-2">Phone: 0822-2912-1208</p>
+            <p class="text-xl text-gray-200">Location: Surabaya, East Java, Indonesia</p>
         </div>
     </section>
+
+    <!-- Memanggil JavaScript menggunakan base_url -->
+    <script src="<?= base_url('assets/js/app.js'); ?>"></script>
+
     </body>
 </html>

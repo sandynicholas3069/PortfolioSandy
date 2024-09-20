@@ -83,13 +83,18 @@ class Portfolio extends CI_Controller {
             'Student at SD Negeri Medokan Ayu 2 Surabaya 2010-2016',
         ];
 
+        $data['achievements'] = [
+            '2nd Eligible Of Science Class, 2021/2022', 
+            '8th Place of Physics Olimpiad, 2021',
+        ];
+
         $data['portfolio'] = [
             [
                 'num' => '01',
                 'category' => 'Web Development',
                 'title' => 'Database Toko Buku IMS',
                 'description' => 'A database website development project for the case study "Toko Buku IMS"',
-                'stack' => ['Html 5', 'Css 3', 'Javascript', 'Php', 'MySQL'],
+                'stack' => ['Html 5', 'Css 3', 'Javascript', 'Php', 'MySql'],
                 'image' => '/assets/Work/work1.png',
                 'href' => 'https://github.com/sandynicholas3069/DatabaseTokoBukuIMS',
             ],
