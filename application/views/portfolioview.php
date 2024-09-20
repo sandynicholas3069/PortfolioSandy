@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio-Sandy Nicholas</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Sandy Nicholas</title>
 
-        <!-- Memanggil Tailwind CSS -->
-        <link href="<?= base_url('assets/css/style.css'); ?>" rel="stylesheet">
-
-        <style>
-            .primary-color {
-                color: #FFA500;
+    <!-- Memanggil Tailwind CSS -->
+    <link href="<?= base_url('assets/css/style.css'); ?>" rel="stylesheet">
+    
+    <style>
+        .primary-color {
+            color: #FFA500;
+        }
+        .primary-bg {
+            background-color: #FFA500;
+        }
+        .bg-dark {
+            background-color: #1F1F1F;
+        }
+        /* Custom animation */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
             }
-            .primary-bg {
-                background-color: #FFA500;
+            100% {
+                opacity: 1;
+                transform: translateY(0);
             }
-            .bg-dark {
-                background-color: #1f1f1f;
-            }
-            /*custom animation*/
-            @keyframes fadeInUp {
-                0% {
-                    opacity: 0;
-                    transform: translateY(20px);
-                }
-                100% {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-            .fadeInUp {
-                animation: fadeInUp 1s ease-out;
-            }
-        </style>
-    </head>
-    <body class="bg-dark text-white">
+        }
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-dark text-white">
 
     <!-- Navbar -->
     <nav class="bg-dark p-4 fixed w-full z-10 top-0 shadow-lg">
@@ -53,14 +53,14 @@
     <!-- Home Section -->
     <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-orange-300 to-orange-900 text-center fade-in-up">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-center space-x-8 max-w-screen-lg">
-            <!-- Image Section -->
+            <!-- Image -->
             <div class="mb-6 md:mb-0">
                 <img src="<?= base_url('assets/img/profile.png'); ?>" alt="Sandy Nicholas" class="rounded-full w-64 h-64 object-cover shadow-lg">
             </div>
 
             <!-- Text Content -->
             <div>
-                <h2 class="text-5xl font-extrabold text-white mb-4">Hi, My Name is <span class="text-primary"><?= $personal_info['name']; ?></span></h2>
+                <h2 class="text-5xl font-extrabold text-white mb-4">Hi, My Name is <span class="primary-color"><?= $personal_info['name']; ?><span></span></h2>
                 <p class="text-2xl text-gray-300 mb-6"><?= $personal_info['occupation']; ?></p>
                 <p class="text-lg text-justify text-gray-100 max-w-3xl mx-auto"><?= $personal_info['description']; ?></p>
             </div>
