@@ -140,6 +140,12 @@ class Portfolio extends CI_Controller {
             ],
         ];
 
+        $data['contact'] = [
+            'email' => 'sandynicholas1201@gmail.com',
+            'phone' => '0822-2912-1208',
+            'location' => 'Surabaya, East Java, Indonesia',
+        ];
+
         $this->load->view('portfolioview', $data);
     }
 }
