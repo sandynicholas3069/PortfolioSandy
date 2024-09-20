@@ -41,11 +41,11 @@
         <div class="container mx-auto flex justify-between items-center max-w-screen-lg">
             <h1 class="text-xl font-bold text-white tracking-wide">Sandy Nicholas</h1>
             <ul class="flex space-x-6">
-                <li><a href="home" class="hover:text-[#FFA500] transition duration-300 ease-in-out">Home</a></li>
-                <li><a href="transcript" class="hover:text-[#FFA500] transition duration-300 ease-in-out">Transcript</a></li>
-                <li><a href="cv" class="hover:text-[#FFA500] transition duration-300 ease-in-out">Curriculum Vitae</a></li>
-                <li><a href="portfolio" class="hover:text-[#FFA500] transition duration-300 ease-in-out">Portfolio</a></li>
-                <li><a href="contact" class="hover:text-[#FFA500] transition duration-300 ease-in-out">Contact</a></li>
+                <li><a href="#home" class="hover:text-[#FFA500] transition duration-300 ease-in-out">Home</a></li>
+                <li><a href="#transcript" class="hover:text-[#FFA500] transition duration-300 ease-in-out">Transcript</a></li>
+                <li><a href="#cv" class="hover:text-[#FFA500] transition duration-300 ease-in-out">Curriculum Vitae</a></li>
+                <li><a href="#portfolio" class="hover:text-[#FFA500] transition duration-300 ease-in-out">Portfolio</a></li>
+                <li><a href="#contact" class="hover:text-[#FFA500] transition duration-300 ease-in-out">Contact Me</a></li>
             </ul>
         </div>
     </nav>
