@@ -13,7 +13,7 @@ class Portfolio extends CI_Controller {
             'blood_type' => $this->input->post('blood_type'),
             'height' => $this->input->post('height'),
             'weight' => $this->input->post('weight'),
-            'martial_status' => $this->input->post('martial_status'),
+            'marital_status' => $this->input->post('marital_status'),
             'nationality' => $this->input->post('nationality'),
             'hobby' => $this->input->post('hobby'),
             'npm' => $this->input->post('npm'),
@@ -26,8 +26,11 @@ class Portfolio extends CI_Controller {
     }
 
     public function deleteProfile() {
-        $this->session->unset_userdata('profile_data');
-        redirect('portfolio/index');
+    // Menghapus session profile_data
+    $this->session->unset_userdata('profile_data');
+    
+    // Redirect atau tampilkan pesan
+    redirect('portfolio/index'); // Arahkan kembali ke halaman yang diinginkan
     }
 
     public function index() {
@@ -184,7 +187,7 @@ class Portfolio extends CI_Controller {
         if ($this->session->userdata('profile_data')) {
             $data['profile_data'] = $this->session->userdata('profile_data');
         } else {
-            $data['profile_data'] = null;
+            $data['profile_data'] = null; // Jika belum ada data, set null
         }
 
         $this->load->view('portfolioview', $data);
