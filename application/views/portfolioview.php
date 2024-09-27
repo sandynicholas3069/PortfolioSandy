@@ -70,37 +70,37 @@
     </section>
 
     <!-- Profile Section -->
-    <section id="profile" class="py-16 bg-gradient-to-r from-yellow-500 to-green-500 text-center fade-in-up relative">
+    <section id="profile" class="py-16 bg-gradient-to-r from-yellow-500 to-green-500 fade-in-up relative">
         <div class="container mx-auto max-w-screen-lg">
             <h2 class="text-4xl font-bold text-center text-white mb-8">Profile</h2>
             <div class="bg-gray-800 rounded-lg p-6 shadow-lg transition duration-300 hover:scale-105 hover:bg-gray-700 relative">
                 <?php if (!empty($profile_data)): ?>
-                    <ul>
-                        <li><strong>Name:</strong> <?= htmlspecialchars($profile_data ['name']); ?></li>
-                        <li><strong>Place and Date of Birth:</strong> <?= htmlspecialchars($profile_data ['birth']); ?></li>
-                        <li><strong>Gender:</strong> <?= htmlspecialchars($profile_data ['gender']); ?></li>
-                        <li><strong>Religion:</strong> <?= htmlspecialchars($profile_data ['religion']); ?></li>
-                        <li><strong>Blood Type:</strong> <?= htmlspecialchars($profile_data ['blood_type']); ?></li>
-                        <li><strong>Height:</strong> <?= htmlspecialchars($profile_data ['height']); ?></li>
-                        <li><strong>Weight:</strong> <?= htmlspecialchars($profile_data ['weight']); ?></li>
-                        <li><strong>Martial Status:</strong> <?= htmlspecialchars($profile_data ['martial_status']); ?></li>
-                        <li><strong>Nationality:</strong> <?= htmlspecialchars($profile_data ['nationality']); ?></li>
-                        <li><strong>Hobby:</strong> <?= htmlspecialchars($profile_data ['hobby']); ?></li>
-                        <li><strong>NPM:</strong> <?= htmlspecialchars($profile_data ['npm']); ?></li>
-                        <li><strong>Major:</strong> <?= htmlspecialchars($profile_data ['major']); ?></li>
-                        <li><strong>Faculty:</strong> <?= htmlspecialchars($profile_data ['faculty']); ?></li>
+                    <ul class="list-disc ml-6 text-gray-300 space-y-2">
+                        <li><strong>Name:</strong> <?= htmlspecialchars($profile_data['name']); ?></li>
+                        <li><strong>Place and Date of Birth:</strong> <?= htmlspecialchars($profile_data['birth']); ?></li>
+                        <li><strong>Gender:</strong> <?= htmlspecialchars($profile_data['gender']); ?></li>
+                        <li><strong>Religion:</strong> <?= htmlspecialchars($profile_data['religion']); ?></li>
+                        <li><strong>Blood Type:</strong> <?= htmlspecialchars($profile_data['blood_type']); ?></li>
+                        <li><strong>Height:</strong> <?= htmlspecialchars($profile_data['height']); ?> cm</li>
+                        <li><strong>Weight:</strong> <?= htmlspecialchars($profile_data['weight']); ?> kg</li>
+                        <li><strong>Marital Status:</strong> <?= htmlspecialchars($profile_data['marital_status']); ?></li>
+                        <li><strong>Nationality:</strong> <?= htmlspecialchars($profile_data['nationality']); ?></li>
+                        <li><strong>Hobby:</strong> <?= htmlspecialchars($profile_data['hobby']); ?></li>
+                        <li><strong>NPM:</strong> <?= htmlspecialchars($profile_data['npm']); ?></li>
+                        <li><strong>Major:</strong> <?= htmlspecialchars($profile_data['major']); ?></li>
+                        <li><strong>Faculty:</strong> <?= htmlspecialchars($profile_data['faculty']); ?></li>
                     </ul>
-                    <?php else: ?>
-                        <p>No profile information available. Please fill out your profile on the Profile Form</p>
-                    <?php endif; ?>
+                <?php else: ?>
+                    <p class="text-gray-400 text-lg">No profile information available. Please fill out your profile.</p>
+                <?php endif; ?>
             </div>
 
             <!-- Button Container -->
-            <div class="absolute bottom-4 left-4 space-x-4">
-                <a href="<?= base_url('portfolio/formProfile')?>" class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 transition duration-300">
-                    Input Profile
+            <div class="absolute bottom-4 left-4 flex space-x-4">
+                <a href="<?= base_url('portfolio/formProfile'); ?>" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">
+                    Fill Profile
                 </a>
-                <a href="<?= base_url('portfolio/deleteProfile') ?>" class="bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-600 transition duration-300">
+                <a href="<?= base_url('portfolio/deleteProfile'); ?>" class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 transition duration-300">
                     Delete Profile
                 </a>
             </div>
