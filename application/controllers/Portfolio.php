@@ -1,5 +1,35 @@
 <?php
 class Portfolio extends CI_Controller {
+    public function formProfile() {
+        $this->load->view('formview');
+    }
+
+    public function saveProfile() {
+        $data['profile_data'] = [
+            'name' => $this->input->post('name'),
+            'birth' => $this->input->post('birth'),
+            'gender' => $this->input->post('gender'),
+            'religion' => $this->input->post('religion'),
+            'blood_type' => $this->input->post('blood_type'),
+            'height' => $this->input->post('height'),
+            'weight' => $this->input->post('weight'),
+            'martial_status' => $this->input->post('martial_status'),
+            'nationality' => $this->input->post('nationality'),
+            'hobby' => $this->input->post('hobby'),
+            'npm' => $this->input->post('npm'),
+            'major' => $this->input->post('major'),
+            'faculty' => $this->input->post('faculty'),
+        ];
+
+        $this->session->set_userdata('profile_data', $data['profile_data']);
+        redirect('portfolio/index');
+    }
+
+    public function deleteProfile() {
+        $this->session->unset_userdata('profile_data');
+        redirect('portfolio/index');
+    }
+
     public function index() {
         $data['personal_info'] = [
             'name' => 'Sandy Nicholas',
@@ -150,6 +180,12 @@ class Portfolio extends CI_Controller {
             'phone' => '0822-2912-1208',
             'location' => 'Surabaya, East Java, Indonesia',
         ];
+
+        if ($this->session->userdata('profile_data')) {
+            $data['profile_data'] = $this->session->userdata('profile_data');
+        } else {
+            $data['profile_data'] = null;
+        }
 
         $this->load->view('portfolioview', $data);
     }

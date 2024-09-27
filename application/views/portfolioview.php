@@ -7,6 +7,7 @@
 
     <!-- Memanggil Tailwind CSS -->
     <link href="<?= base_url('assets/css/style.css'); ?>" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
         .primary-color {
@@ -42,6 +43,7 @@
             <h1 class="text-xl font-bold text-white tracking-wide">Sandy Nicholas</h1>
             <ul class="flex space-x-6">
                 <li><a href="#home" class="hover:text-[#FFA500] transition duration-300 ease-in-out">Home</a></li>
+                <li><a href="#profile" class="hover:text-[#FFA500] transition duration-300 ease-in-out">Profile</a></li>
                 <li><a href="#transcript" class="hover:text-[#FFA500] transition duration-300 ease-in-out">Transcript</a></li>
                 <li><a href="#cv" class="hover:text-[#FFA500] transition duration-300 ease-in-out">Curriculum Vitae</a></li>
                 <li><a href="#portfolio" class="hover:text-[#FFA500] transition duration-300 ease-in-out">Portfolio</a></li>
@@ -63,6 +65,44 @@
                 <h2 class="text-5xl font-extrabold text-white mb-4">Hi, My Name is <span class="primary-color"><?= $personal_info['name']; ?><span></span></h2>
                 <p class="text-2xl text-gray-300 mb-6"><?= $personal_info['occupation']; ?></p>
                 <p class="text-lg text-justify text-gray-100 max-w-3xl mx-auto"><?= $personal_info['description']; ?></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section id="profile" class="py-16 bg-gradient-to-r from-yellow-500 to-green-500 text-center fade-in-up relative">
+        <div class="container mx-auto max-w-screen-lg">
+            <h2 class="text-4xl font-bold text-center text-white mb-8">Profile</h2>
+            <div class="bg-gray-800 rounded-lg p-6 shadow-lg transition duration-300 hover:scale-105 hover:bg-gray-700 relative">
+                <?php if (!empty($profile_data)): ?>
+                    <ul>
+                        <li><strong>Name:</strong> <?= htmlspecialchars($profile_data ['name']); ?></li>
+                        <li><strong>Place and Date of Birth:</strong> <?= htmlspecialchars($profile_data ['birth']); ?></li>
+                        <li><strong>Gender:</strong> <?= htmlspecialchars($profile_data ['gender']); ?></li>
+                        <li><strong>Religion:</strong> <?= htmlspecialchars($profile_data ['religion']); ?></li>
+                        <li><strong>Blood Type:</strong> <?= htmlspecialchars($profile_data ['blood_type']); ?></li>
+                        <li><strong>Height:</strong> <?= htmlspecialchars($profile_data ['height']); ?></li>
+                        <li><strong>Weight:</strong> <?= htmlspecialchars($profile_data ['weight']); ?></li>
+                        <li><strong>Martial Status:</strong> <?= htmlspecialchars($profile_data ['martial_status']); ?></li>
+                        <li><strong>Nationality:</strong> <?= htmlspecialchars($profile_data ['nationality']); ?></li>
+                        <li><strong>Hobby:</strong> <?= htmlspecialchars($profile_data ['hobby']); ?></li>
+                        <li><strong>NPM:</strong> <?= htmlspecialchars($profile_data ['npm']); ?></li>
+                        <li><strong>Major:</strong> <?= htmlspecialchars($profile_data ['major']); ?></li>
+                        <li><strong>Faculty:</strong> <?= htmlspecialchars($profile_data ['faculty']); ?></li>
+                    </ul>
+                    <?php else: ?>
+                        <p>No profile information available. Please fill out your profile on the Profile Form</p>
+                    <?php endif; ?>
+            </div>
+
+            <!-- Button Container -->
+            <div class="absolute bottom-4 left-4 space-x-4">
+                <a href="<?= base_url('portfolio/formProfile')?>" class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 transition duration-300">
+                    Input Profile
+                </a>
+                <a href="<?= base_url('portfolio/deleteProfile') ?>" class="bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-600 transition duration-300">
+                    Delete Profile
+                </a>
             </div>
         </div>
     </section>
@@ -178,9 +218,9 @@
     <section id="contact" class="py-16 bg-gradient-to-r from-teal-500 to-pink-500 text-center fade-in-up">
         <div class="container mx-auto max-w-screen-lg">
             <h2 class="text-4xl font-bold text-white mb-6">Contact Me</h2>
-            <p class="text-xl text-gray-200 mb-2">Email: sandynicholas1201@gmail.com</p>
-            <p class="text-xl text-gray-200 mb-2">Phone: 0822-2912-1208</p>
-            <p class="text-xl text-gray-200">Location: Surabaya, East Java, Indonesia</p>
+            <p class="text-xl text-gray-200 mb-2">Email: <?= $contact ['email']; ?></p>
+            <p class="text-xl text-gray-200 mb-2">Phone: <?= $contact ['phone']; ?></p>
+            <p class="text-xl text-gray-200">Location: <?= $contact ['location']; ?></p>
         </div>
     </section>
 

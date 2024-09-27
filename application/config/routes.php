@@ -50,5 +50,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'portfolio';
+$route['portfolio'] = 'portfolio/index';
+$route['portfolio/formProfile'] = 'portfolio/formProfile';
+$route['portfolio/saveProfile'] = 'portfolio/saveProfile';
+$route['portfolio/deleteProfile'] = 'portfolio/deleteProfile';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
